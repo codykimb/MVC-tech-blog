@@ -4,32 +4,35 @@ const { User } = require('../../models');
 // GET ALL USERS /api/users
 router.get('/', (req, res) => {
     // Access our User model and run .findAll() method)
-    User.findAll()
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+    User.findAll({
+        attributes: { exclude: ['password'] }
+      })
+        .then(dbUserData => res.json(dbUserData))
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
   });
 
 // GET SINGLE USER /api/users/1
 router.get('/:id', (req, res) => {
     User.findOne({
-      where: {
-        id: req.params.id
-      }
-    })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id' });
-          return;
+        attributes: { exclude: ['password'] },
+        where: {
+          id: req.params.id
         }
-        res.json(dbUserData);
       })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+        .then(dbUserData => {
+          if (!dbUserData) {
+            res.status(404).json({ message: 'No user found with this id' });
+            return;
+          }
+          res.json(dbUserData);
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
   });
 
 // POST NEW USER /api/users
@@ -53,6 +56,7 @@ router.put('/:id', (req, res) => {
   
     // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
     User.update(req.body, {
+        individualHooks: true,
       where: {
         id: req.params.id
       }
