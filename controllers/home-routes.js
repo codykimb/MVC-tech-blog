@@ -49,6 +49,11 @@ router.get('/login', (req, res) => {
     res.render('login');
   });
 
+// SIGN UP ROUTE
+router.get('/signup', (req, res) => {
+  res.render('signup');
+});
+
 // SINGLE POST ROUTE
 router.get('/post/:id', (req, res) => {
     Post.findOne({
