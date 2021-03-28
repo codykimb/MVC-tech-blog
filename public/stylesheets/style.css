@@ -12,7 +12,7 @@ body, html {
 
 a {
   text-decoration: none;
-  color: #225ca3;
+  color: slateblue;
   font-weight: bold;
   transition: color .1s;
 }
@@ -29,7 +29,7 @@ a:hover {
 }
 
 button {
-  background-color: #225ca3;
+  background-color: slateblue;
   border: 0;
   padding: 1%;
   color: white;
@@ -48,8 +48,19 @@ button:hover {
   padding: 0;
 }
 
+.post-info {
+  border-bottom: 2px dotted slateblue;
+  margin-bottom: 15px;
+}
+
+.add-post-link {
+  margin-left: 0;
+}
+
 ul {
   list-style-type: none;
+  list-style: none;
+  padding-left: 0;
 }
 
 textarea, input {
@@ -60,7 +71,7 @@ textarea, input {
 
 textarea:focus, input:focus {
   outline: none;
-  border: 1px solid #3486eb;
+  border: 1px solid slateblue;
 }
 
 textarea {
@@ -103,7 +114,7 @@ header h1 {
 
 main {
   flex: 1;
-  padding: 2% 4%;
+  padding: 5px 4%;
 }
 
 .btn-no-style {
@@ -112,7 +123,7 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: slateblue;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
@@ -125,14 +136,15 @@ main {
 }
 
 .delete-post-btn {
-  background-color: #d41414;
+  background-color: darkred;
 }
 
 .delete-post-btn:hover {
-  background-color: #ff643d;
+  background-color: #3486eb;
 }
 
 .post {
+  margin-top: 5px;
   margin-bottom: 2%;
   line-height: 150%;
 }
@@ -153,9 +165,16 @@ main {
   float: right;
 }
 
+.comment-info {
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+  float: right;
+}
+
 .edit-link {
   display: block;
-  margin: -1.5% 0 2% 0;
+  margin: 0 0 2% 0;
 }
 
 .comment-form {
@@ -168,7 +187,7 @@ main {
 }
 
 .comment:nth-child(odd) {
-  background-color: #fff5eb;
+  background-color: #e6dcfe;
 }
 
 .comment .meta {
