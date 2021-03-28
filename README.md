@@ -1,7 +1,7 @@
 # MVC-tech-blog
 
 ## DESCRIPTION  
-This applicaion is a Tech Blog that follows the Model-View-Controller paradigm. It uses the express-handlebars package to use Handlebars.js for the Views, the MySQL2 and Sequelize packages to connect to a MySQL database for the Models, and Express.js for the Controllers.
+This application is a Tech Blog that follows the Model-View-Controller paradigm. It uses the express-handlebars package and Handlebars.js for the Views, the MySQL2 and Sequelize packages to connect to a MySQL database for the Models, and Express.js for the Controllers.
 
 Other dependcies include the dotenv package to use environment variables, the bcrypt package to hash passwords, and the express-session and connect-session-sequelize packages to add authentication.  
   
