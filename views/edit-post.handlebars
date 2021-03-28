@@ -5,10 +5,13 @@
   </h2>
   <form class="edit-post-form">
     <div>
+      <label for="post-title">Title</label>
       <input name="post-title" type="text" value="{{post.title}}" />
     </div>
     <div>
-      <input name="post-text" type="text" value="{{format_url post.post_url}}" />
+      <label for="post-text">Content</label>
+      {{!-- <input name="post-text" type="text" value="{{format_url post.post_url}}" /> --}}
+      <textarea name="post-text">{{format_url post.post_url}}</textarea>
       {{!-- <span>({{format_url post.post_url}})</span> --}}
     </div>
     <div>
